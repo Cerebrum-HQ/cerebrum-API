@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use("/", (req, res, next) => {
-  res.send("<H1>Welcome to CEREBRUM</H1>");
+  res.send("Welcome to CEREBRUM");
   next();
 });
 

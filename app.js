@@ -11,8 +11,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
 
-app.use("/", (req, res, next) => {
-  res.send("Welcome to CEREBRUM - This is a test");
+app.use("/ping", (req, res, next) => {
+  // res.statusCode(200);
+  res.send("Welcome to CEREBRUM - This is the ping route");
   next();
 });
 

@@ -107,4 +107,4 @@ dist
 config.js
 
 # Dependecies directories
-node_modules
+node_modules/

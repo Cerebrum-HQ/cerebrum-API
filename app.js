@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+const userRouter = require('./src/v1/routes/userRouter')
+require('./src/v1/database/database')
 
 //Instantiate app
 const app = express();
@@ -10,6 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
+app.use(userRouter)
 
 app.use("/ping", (req, res, next) => {
   // res.statusCode(200);

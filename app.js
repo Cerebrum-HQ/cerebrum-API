@@ -13,7 +13,7 @@ app.use(cors());
 
 app.use("/ping", (req, res, next) => {
   // res.statusCode(200);
-  res.send("Welcome to CEREBRUM - This is the ping route");
+  res.send("Welcome to CEREBRUM");
   next();
 });
 

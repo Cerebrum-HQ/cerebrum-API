@@ -37,9 +37,9 @@
 
   "jest": {
     "testEnvironment": "node"
+  },
 
   "engines": {
     "node": "12.18.4"
-
   }
 }

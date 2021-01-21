@@ -1,3 +1,5 @@
+
+playground/
 # Logs
 logs
 *.log
@@ -109,4 +111,4 @@ config.js
 # Dependecies directories
 node_modules/
 config/
-playground/
+playground/*

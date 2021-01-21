@@ -5,7 +5,6 @@ const router = new express.Router()
 
 router.post('/teachers', async (req, res) => {
     const teacher = new Teacher(req.body)
-
     try {
         const newTeacher = await teacher.save()
         const token = await teacher.getAuthToken()

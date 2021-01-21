@@ -1,16 +1,12 @@
 const app = require("./app");
 
-const PORT = process.env.PORT || config.httpPort;
+const PORT = process.env.PORT || 3000;
 
 //Listening on development mode or production mode
 
-const port = process.env.PORT
-const envName = process.env.ENVNAME
-
+const port = process.env.PORT;
+const envName = process.env.ENVNAME;
 
 app.listen(PORT, () => {
-
-  console.log(
-    `Great! Server listening on port ${PORT} in ${envName} mode`
-  );
+  console.log(`Great! Server listening on port ${PORT} in ${envName} mode`);
 });

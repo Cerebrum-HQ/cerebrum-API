@@ -1,3 +1,5 @@
+
+playground/
 # Logs
 logs
 *.log
@@ -107,4 +109,6 @@ dist
 
 
 # Dependecies directories
-node_modules
+node_modules/
+config/
+playground/*

@@ -4,7 +4,7 @@ const bcryptjs = require('bcryptjs')
 const validator = require('validator')
 const { Schema } = mongoose
 
-const UserSchema = new Schema({
+const teacherSchema = new Schema({
     name:{
         type: String
     },
@@ -23,7 +23,6 @@ const UserSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        minlength: 6,
         validate(value){
             if(!validator.isStrongPassword(value, {minlength: 6,
                 minLowercase: 1, minUppercase: 1,
@@ -41,27 +40,27 @@ const UserSchema = new Schema({
 })
 
 
-UserSchema.methods.getAuthToken = async function (){
-    const user = this
+teacherSchema.methods.getAuthToken = async function (){
+    const teacher = this
 
-    const token = jwt.sign({_id: user._id.toString()}, 'thisisanencryptionstring')
-    user.tokens = user.tokens.concat({token})
-    await user.save()
+    const token = jwt.sign({_id: teacher._id.toString()}, 'thisisanencryptionstring')
+    teacher.tokens = teacher.tokens.concat({token})
+    await teacher.save()
 
     return token
 
 }
 
-UserSchema.pre('save', async function(next){
-    const user = this
+teacherSchema.pre('save', async function(next){
+    const teacher = this
 
-    if (user.isModified('password')){
-        user.password = await bcryptjs.hash(user.password, 8)
+    if (teacher.isModified('password')){
+        teacher.password = await bcryptjs.hash(teacher.password, 8)
     }
 
     next()
 })
 
-const User = mongoose.model('User', UserSchema)
+const Teacher = mongoose.model('Teacher', teacherSchema)
 
-module.exports = User
+module.exports = Teacher

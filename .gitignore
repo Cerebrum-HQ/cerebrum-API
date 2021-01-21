@@ -106,7 +106,7 @@ dist
 .tern-port
 
 .env
-config.js
+
 
 # Dependecies directories
 node_modules/

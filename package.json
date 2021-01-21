@@ -34,7 +34,12 @@
     "nodemon": "^2.0.7",
     "supertest": "^6.1.1"
   },
+
   "jest": {
     "testEnvironment": "node"
+
+  "engines": {
+    "node": "12.18.4"
+
   }
 }

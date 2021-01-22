@@ -4,7 +4,6 @@ const PORT = process.env.PORT || 3000;
 
 //Listening on development mode or production mode
 
-const port = process.env.PORT;
 const envName = process.env.ENVNAME;
 
 app.listen(PORT, () => {

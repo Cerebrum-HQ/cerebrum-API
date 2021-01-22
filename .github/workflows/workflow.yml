@@ -22,8 +22,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
       - run: npm i
       - run: npm run build --if-present
-      - run: npm test
+
+      - name: Test
+      - run: npm config set MONGODB_URL ${MONGODB_URL}
+          npm config set PORT ${PORT}
+          npm config set ENVNAME ${ENVNAME}
+          npm test
         env:
+          MONGODB_URL: ${{secrets.MONGODB_URL}}
+          PORT: ${{secrets.PORT}}
+          ENVNAME: ${{secrets.ENVNAME}}
           CI: true

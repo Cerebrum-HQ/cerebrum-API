@@ -29,8 +29,6 @@ jobs:
 
       - name: Test
       - run: npm config set MONGODB_URL ${MONGODB_URL}
-          npm config set PORT ${PORT}
-          npm config set ENVNAME ${ENVNAME}
           npm test
         env:
           MONGODB_URL: ${{secrets.MONGODB_URL}}

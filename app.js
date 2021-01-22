@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const userRouter = require("./src/v1/routes/userRouter");
 const teacherRouter = require("./src/v1/routes/teacherRouter");
+require("dotenv").config();
 
 //Instantiate app
 const app = express();

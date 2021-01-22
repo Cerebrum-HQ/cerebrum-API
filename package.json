@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "env-cmd -f jest",
+    "test": "env-cmd -f .env jest",
     "start": "env-cmd -f .env nodemon server.js"
   },
   "repository": {

@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/angular2-expandable-list.svg)](https://badge.fury.io/js/angular2-expandable-list)
+![Build](https://github.com/Cerebrum-HQ/cerebrum-API/workflows/Linux%20build/badge.svg?branch=main)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 # Cerebrum
@@ -31,9 +31,6 @@ v12.8.4
     - [Building a distribution version](#building-a-distribution-version)
     - [Serving the distribution version](#serving-the-distribution-version)
   - [Contributing](#contributing)
-  - [Credits](#credits)
-  - [Built With](#built-with)
-  - [Versioning](#versioning)
   - [Authors](#authors)
   - [License](#license)
 
@@ -106,6 +103,6 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Authors
 
-- **Njoli Patrick** - _Initial work_ - [ogmaro](https://github.com/ogmaro)
+- **Njoli Patrick** - [ogmaro](https://github.com/ogmaro)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/Cerebrum-HQ/cerebrum-API/graphs/contributors) who participated in this project.

@@ -1,3 +1,4 @@
+[![Quality]https://www.code-inspector.com/project/18113/score/svg]
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 # Cerebrum

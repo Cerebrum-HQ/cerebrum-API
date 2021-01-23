@@ -111,4 +111,3 @@ config.js
 # Dependecies directories
 node_modules/
 config/
-playground/*

@@ -110,9 +110,4 @@ dist
 
 # Dependecies directories
 node_modules/
-<<<<<<< HEAD
 config/
-=======
-playground/*
-config/
->>>>>>> 7647d1b8601de2132e70a90976f9947f48eb7d86

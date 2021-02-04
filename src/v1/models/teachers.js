@@ -2,6 +2,7 @@ const mongoose = require ('mongoose')
 const jwt = require('jsonwebtoken')
 const bcryptjs = require('bcryptjs')
 const validator = require('validator')
+const School = require('./schools')
 const { Schema } = mongoose
 
 const teacherSchema = new Schema({
@@ -39,6 +40,11 @@ const teacherSchema = new Schema({
     }]
 })
 
+teacherSchema.virtual('schools', {
+    ref: 'School',
+    localField: '_id',
+    foreignField:  'instructor'
+})
 
 teacherSchema.methods.getAuthToken = async function (){
     const teacher = this
@@ -51,6 +57,23 @@ teacherSchema.methods.getAuthToken = async function (){
 
 }
 
+teacherSchema.statics.findCredentials = async function (email, password){
+
+    const teacher = await Teacher.findOne({email})
+
+    if (!teacher){
+        throw new Error('Teacher not found')
+    }
+    const passwordMatch = await bcryptjs.compare(password, teacher.password)
+
+
+    if (!passwordMatch){
+        throw new Error('Password do not match')
+    }
+
+    return teacher
+}
+
 teacherSchema.pre('save', async function(next){
     const teacher = this
 
@@ -60,6 +83,14 @@ teacherSchema.pre('save', async function(next){
 
     next()
 })
+
+teacherSchema.pre('remove', async function(next){
+
+    await School.deleteMany({instructor: this._id})
+
+    next()
+})
+
 
 const Teacher = mongoose.model('Teacher', teacherSchema)
 

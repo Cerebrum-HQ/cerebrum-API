@@ -41,6 +41,24 @@ const UserSchema = new Schema({
 })
 
 
+UserSchema.statics.findByCredentials = async function (email, password){
+
+    const user = await User.findOne({email})
+
+    if (!user){
+        throw new Error('Teacher not found')
+    }
+    const passwordMatch = await bcryptjs.compare(password, user.password)
+
+
+    if (!passwordMatch){
+        throw new Error('Password do not match')
+    }
+
+    return user
+}
+
+
 UserSchema.methods.getAuthToken = async function (){
     const user = this
 
